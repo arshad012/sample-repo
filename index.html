@@ -5,8 +5,68 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #navbar{
+            height: 70px;
+            margin: auto;
+            margin-top: 30px;
+            border: 0px solid red;
+            background-color: yellow;
+            font-size: 50px;
+        }
+        #navbar + div{
+            border: 0px solid blue;
+            margin: auto;
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: 280px;
+            gap: 30px;
+        }
+        #navbar + div > div{
+            font-size: 30px;
+        }
+        #navbar + div > div:nth-child(1){
+            background-color: red;
+        }
+        #navbar + div > div:nth-child(2){
+            background-color: rgb(71, 71, 201);
+        }
+        #navbar + div > div:nth-child(3){
+            background-color: rgb(60, 192, 60);
+        }
+        #navbar + div > div:nth-child(4){
+            background-color: grey;
+        }
+        
+
+        /*  MEDIUM SCREEN */
+    @media all and (min-width:550px) and (max-width:720px){
+        #navbar + div{
+            grid-template-columns: repeat(2,1fr);
+            grid-template-rows: repeat(2,280px);
+        }
+    }
+
+    /* SMALL SCREEN */
+    @media all and (min-width:320px) and (max-width:551px){
+        #navbar + div{
+            grid-template-columns: 100%;
+            grid-template-rows: repeat(4,100px);
+        }
+    }
+
+    </style>
 </head>
 <body>
-    <h1>FIrst layout</h1>
+    <div id="navbar">Navbar</div>
+
+    <div>
+        <div>Box 1</div>
+        <div>Box 2</div>
+        <div>Box 3</div>
+        <div>Box 4</div>
+    </div>
+
 </body>
 </html>
